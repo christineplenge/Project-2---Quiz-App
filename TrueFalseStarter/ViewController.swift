@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     
     var finalAnswer: Int = 0
     
-    let questionsPerRound = 4
+    let questionsPerRound = 10
     var questionsAsked = 0
     var correctQuestions = 0
     var indexOfSelectedQuestion: Int = 0
@@ -82,6 +82,7 @@ class ViewController: UIViewController {
         if questionsAsked == questionsPerRound {
             // Game is over
             displayScore()
+            questionProvider = QuestionProvider()
         } else {
             // Continue game
             finalAnswer = questionProvider.randomQuestion(label: questionField, button1: FirstAnswerButton, button2: SecondAnswerButton, button3: ThirdAnswerButton, button4: FourthAnswerButton, button5: PlayAgainButton)
